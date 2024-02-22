@@ -3,29 +3,37 @@
 @tailwind utilities;
 
 html {
-  @apply max-w-[100vw] overflow-x-hidden min-w-[100vw] min-h-screen;
+	@apply min-h-screen min-w-[100vw] max-w-[100vw] overflow-x-hidden;
 }
 
 body {
-  background: url("./assets/bg/bgDoodles.svg") no-repeat center/cover fixed;
-  background-blend-mode: overlay;
-  @apply min-w-full min-h-full font-sans text-base  bg-light dark:bg-dark text-dark dark:text-light selection:bg-dark/20 dark:selection:bg-light/20;
+	background: url('./assets/bg/bgDoodles.svg') no-repeat center/cover fixed;
+	background-blend-mode: overlay;
+	@apply min-h-full min-w-full bg-light font-sans  text-base text-dark selection:bg-dark/20 dark:bg-dark dark:text-light dark:selection:bg-light/20;
 }
 
 h1,
 h2,
 h3 {
-  @apply font-serif;
+	@apply font-serif;
 }
 
 h4,
 h5,
 h6 {
-  @apply font-sans;
+	@apply font-sans;
 }
 
 #monogram #lbracket,
 #monogram #rbracket,
 #monogram #M {
-  @apply fill-dark dark:fill-light;
+	@apply fill-dark dark:fill-light;
+}
+
+code {
+	font-family: 'VT323', monospace;
+}
+
+.menuItem {
+	@apply transition-all duration-100 active:scale-90;
 }

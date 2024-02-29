@@ -1,18 +1,56 @@
 ---
-import BaseHead from '../components/BaseHead.astro'
+import BaseHead from "../components/BaseHead.astro";
+import "@fontsource-variable/eb-garamond";
+import "@fontsource/vt323";
+import Footer from "../components/Footer.astro";
 
-import '../base.css'
+import "../base.css";
 interface Props {
-	title: string
+  title: string;
 }
 
-const { title } = Astro.props
+const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" data-theme="">
-	<BaseHead title={title} />
-	<body>
-		<slot />
-	</body>
+<html
+  x-cloak
+  x-transition
+  x-data="{darkMode: $persist(false), init: false}"
+  x-init="$nextTick(() => {init = true; })"
+  x-bind:class="{ 'dark': darkMode}"
+  lang="en"
+>
+  <BaseHead title={title} />
+
+  <body
+    class="flex flex-col flex-nowrap items-center justify-center overflow-hidden"
+  >
+    <!-- <Header className=' p-3' /> -->
+    <main
+      class="flex h-fit w-full flex-col flex-wrap items-center justify-center p-3"
+      transition:animate="fade"
+    >
+      <slot />
+    </main>
+    <Footer
+      className="absolute bottom-0 z-20 flex w-full flex-none flex-row flex-nowrap items-center justify-between p-3 lg:items-end sm:portrait:items-end"
+    />
+
+    <!-- AlpineJS plugins -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/@alpinejs/persist@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"
+    ></script>
+
+    <!-- AlpineJS Core -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+  </body>
 </html>

@@ -1,0 +1,50 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  size?: number | undefined;
+  className?: string;
+}
+
+const links = [
+  {
+    name: "GitHub",
+    link: "https://github.com/martinfrommel",
+    icon: "pixelarticons:git-merge",
+  },
+  {
+    name: "Music",
+    link: "https://tidal.com/browse/credits/20269946",
+    icon: "pixelarticons:music",
+  },
+  {
+    name: "Projects",
+    link: "#",
+    icon: "pixelarticons:folder",
+  },
+  {
+    name: "Socials",
+    link: "https://linktr.ee/martinfrommel",
+    icon: "pixelarticons:human-handsup",
+  },
+];
+
+const { size, className } = Astro.props;
+---
+
+{
+  links.map((link) => (
+    <li class="menuItem">
+      <a
+        aria-label={link.name}
+        href={link.link}
+        target="_blank"
+        class="flex flex-none flex-col flex-wrap items-center justify-center"
+      >
+        <Icon name={link.icon} width={size} height={size} />
+
+        <span class="font-mono xl:text-lg">{link.name}</span>
+      </a>
+    </li>
+  ))
+}

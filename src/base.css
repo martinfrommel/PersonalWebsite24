@@ -2,38 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
+[x-cloak] {
+  display: none !important;
+}
+
 html {
-	@apply min-h-screen min-w-[100vw] max-w-[100vw] overflow-x-hidden;
+  @apply min-w-[100vw] max-w-[100vw] overflow-x-hidden;
 }
 
 body {
-	background: url('./assets/bg/bgDoodles.svg') no-repeat center/cover fixed;
-	background-blend-mode: overlay;
-	@apply min-h-full min-w-full bg-light font-sans  text-base text-dark selection:bg-dark/20 dark:bg-dark dark:text-light dark:selection:bg-light/20;
+  background: url("./assets/bg/bgDoodles.svg") no-repeat center/cover fixed;
+  background-blend-mode: overlay;
+  @apply min-h-full min-w-full bg-light font-sans  text-base text-dark selection:bg-dark/20 dark:bg-dark dark:text-light dark:selection:bg-light/20;
 }
 
 h1,
 h2,
 h3 {
-	@apply font-serif;
+  @apply font-serif;
 }
 
 h4,
 h5,
 h6 {
-	@apply font-sans;
+  @apply font-sans;
 }
 
 #monogram #lbracket,
 #monogram #rbracket,
 #monogram #M {
-	@apply fill-dark dark:fill-light;
+  @apply fill-dark dark:fill-light;
 }
 
 code {
-	font-family: 'VT323', monospace;
+  font-family: "VT323", monospace;
 }
 
 .menuItem {
-	@apply transition-all duration-100 active:scale-90;
+  @apply flex flex-none flex-col flex-wrap items-center justify-center transition-all duration-100 hover:cursor-pointer active:scale-90;
 }

@@ -7,13 +7,13 @@
 }
 
 html {
-  @apply min-w-[100vw] max-w-[100vw] overflow-x-hidden;
+  @apply min-h-full min-w-[100vw] max-w-[100vw] overflow-x-hidden;
 }
 
 body {
   background: url("./assets/bg/bgDoodles.svg") no-repeat center/cover fixed;
   background-blend-mode: overlay;
-  @apply min-h-full min-w-full bg-light font-sans  text-base text-dark selection:bg-dark/20 dark:bg-dark dark:text-light dark:selection:bg-light/20;
+  @apply min-h-screen min-w-full  bg-light font-sans  text-base text-dark selection:bg-dark/20 dark:bg-dark dark:text-light dark:selection:bg-light/20;
 }
 
 h1,

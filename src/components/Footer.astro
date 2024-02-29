@@ -12,12 +12,12 @@ const { className } = Astro.props;
 
 <footer class={className}>
   <DarkModeToggle />
-  <BottomMenu />
+  <BottomMenu transition:persist />
   <Tooltip
     tooltipArrow={true}
     tooltipText="Made with 🧗 in 🇨🇿"
     tooltipPosition={"left"}
     tooltipClassName="dark:bg-light dark:text-dark bg-dark text-light font-mono "
-    ><Monogram className="xl:w-24" /></Tooltip
+    transition:persist><Monogram className="xl:w-24" /></Tooltip
   >
 </footer>

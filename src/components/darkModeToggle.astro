@@ -5,12 +5,11 @@
 <div
   id="darkModeToggle"
   class="transition-all duration-100 hover:cursor-pointer active:scale-75"
-  x-data="{darkMode: $persist(false)}"
 >
   <!-- Moon Icon -->
   <svg
     x-show.transition.opacity="darkMode"
-    class="h-7 rounded-full p-1 transition-all ease-out hover:cursor-pointer active:bg-dark/20 md:h-9 active:dark:bg-light/20"
+    class="h-7 rounded-full p-1 transition-all ease-out hover:cursor-pointer active:bg-dark/20 active:dark:bg-light/20 md:h-9"
     @click="$nextTick(() => {darkMode = ! darkMode})"
     xmlns="http://www.w3.org/2000/svg"
     width="2rem"
@@ -24,7 +23,7 @@
   <!-- Sun Icon -->
   <svg
     x-show.transition.opacity="! darkMode"
-    class="h-7 rounded-full p-1 transition-all ease-out hover:cursor-pointer active:bg-dark/20 md:h-9 active:dark:bg-light/20"
+    class="h-7 rounded-full p-1 transition-all ease-out hover:cursor-pointer active:bg-dark/20 active:dark:bg-light/20 md:h-9"
     @click="$nextTick(() => {darkMode = ! darkMode})"
     xmlns="http://www.w3.org/2000/svg"
     width="2rem"

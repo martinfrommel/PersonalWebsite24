@@ -3,7 +3,7 @@ import "@fontsource-variable/eb-garamond";
 import "@fontsource/vt323";
 
 import BaseHead from "../components/BaseHead.astro";
-import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
 
 import "../base.css";
 interface Props {
@@ -19,15 +19,13 @@ const { title } = Astro.props;
   x-transition
   x-data="{darkMode: $persist(false), init: false}"
   x-init="$nextTick(() => {init = true; })"
-  x-bind:class="{ 'dark': darkMode}"
+  x-bind:class="{'dark': darkMode}"
   lang="en"
-  transition:persist
 >
   <BaseHead title={title} />
 
   <body
     class="flex flex-col flex-nowrap items-center justify-center overflow-hidden"
-    transition:animate="fade"
   >
     <!-- <Header className=' p-3' /> -->
     <main
@@ -36,7 +34,7 @@ const { title } = Astro.props;
     >
       <slot />
     </main>
-    <Footer
+    <Header
       className="absolute bottom-0 z-20 flex w-full flex-none flex-row flex-nowrap items-center justify-between p-3 lg:items-end sm:portrait:items-end"
     />
 

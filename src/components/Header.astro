@@ -10,7 +10,7 @@ interface Props {
 const { className } = Astro.props;
 ---
 
-<footer class={className}>
+<section class={className}>
   <DarkModeToggle />
   <BottomMenu transition:persist />
   <Tooltip
@@ -20,4 +20,4 @@ const { className } = Astro.props;
     tooltipClassName="dark:bg-light dark:text-dark bg-dark text-light font-mono "
     transition:persist><Monogram className="xl:w-24" /></Tooltip
   >
-</footer>
+</section>

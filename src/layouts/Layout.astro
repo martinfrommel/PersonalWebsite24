@@ -25,7 +25,8 @@ const { title } = Astro.props;
   <BaseHead title={title} />
 
   <body
-    class="flex flex-col flex-nowrap items-center justify-center overflow-hidden"
+    x-cloak
+    class="flex w-full flex-1 flex-col flex-nowrap items-center justify-center overflow-hidden"
   >
     <!-- <Header className=' p-3' /> -->
     <main
@@ -35,7 +36,8 @@ const { title } = Astro.props;
       <slot />
     </main>
     <Header
-      className="absolute bottom-0 z-20 flex w-full flex-none flex-row flex-nowrap items-center justify-between p-3 lg:items-end sm:portrait:items-end"
+      transition:persist
+      className="absolute bottom-0 z-20 flex w-full flex-none flex-row flex-nowrap items-end  justify-between p-3"
     />
 
     <!-- AlpineJS plugins -->

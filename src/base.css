@@ -36,6 +36,14 @@ h3 {
   @apply font-serif;
 }
 
+h1 {
+  @apply text-3xl font-bold sm:text-4xl md:text-5xl xl:text-8xl md:portrait:text-7xl landscape:text-3xl landscape:md:text-4xl landscape:xl:text-7xl;
+}
+
+h2 {
+  @apply font-sans md:portrait:text-3xl landscape:text-sm landscape:md:text-lg landscape:xl:text-3xl;
+}
+
 h4,
 h5,
 h6 {
@@ -54,4 +62,8 @@ code {
 
 .menuItem {
   @apply flex flex-none flex-col flex-wrap items-center justify-center transition-all duration-100 hover:cursor-pointer active:scale-90;
+}
+
+.hero {
+  @apply z-20 flex flex-1 flex-col flex-nowrap items-center justify-center gap-4  text-center;
 }

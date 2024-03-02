@@ -1,0 +1,31 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import type { CollectionEntry } from "astro:content";
+import Card from "../../components/Card.astro";
+import createExcerpt from "../../utils/createExcerpt";
+type Props = {
+  projects: CollectionEntry<"projects">;
+};
+
+const projects = await getCollection("projects");
+---
+
+<Layout title="Projects">
+  <section class="flex flex-1 flex-col items-center justify-around gap-12">
+    <h1>Projects</h1>
+    <ul class="grid grid-flow-row grid-cols-1 gap-4 md:grid-cols-4">
+      {
+        projects.map((project) => (
+          <Card
+            title={project.data.title}
+            href={`/projects/${project.slug}`}
+            description={project.data.description}
+          >
+            <p></p>
+          </Card>
+        ))
+      }
+    </ul>
+  </section>
+</Layout>

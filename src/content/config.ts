@@ -14,23 +14,32 @@ const technologies = [
   "css",
   "express",
   "tailwind",
-  "graphQL",
-  "mongoDB",
+  "graphql",
+  "mongodb",
   "postgres",
   "mysql",
   "firebase",
   "aws",
   "docker",
+  'astro',
+  'alpinejs'
 ] as const;
 
-const projectsCollection = defineCollection({
-  type: "content",
-  schema: z.object({
-    title: z.string(),
-    datePublished: z.date(),
-    language: z.enum(languages).optional(),
-    technologies: z.array(z.enum(technologies)),
-    description: z.string(),
-    image: z.string().optional(),
+export const collections = {
+  projects: defineCollection({
+    type: "content",
+    schema: z.object({
+      title: z.string(),
+      datePublished: z.date().refine((date) => date <= new Date(), {
+        message: "Date can't be in the future",
+      }),
+      language: z.enum(languages).optional(),
+      technologies: z.array(z.enum(technologies)).optional(),
+      description: z
+        .string()
+        .max(150, "Description must be shorter than 150 chars")
+        .optional(),
+      image: z.string().optional(),
+    }),
   }),
-});
+};

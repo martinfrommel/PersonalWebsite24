@@ -1,22 +1,40 @@
 ---
+import { Image } from "astro:assets";
+
 interface Props {
   title: string;
   href: string;
   description?: string;
+  image?: string;
+  logo: string;
 }
 
-const { href, title, description } = Astro.props;
+const { href, title, description, image, logo, ...props } = Astro.props;
 ---
 
-<li class="flex flex-col">
-  <a href={href} class="hover:border-0">
-    <h2>
+<li
+  class="flex min-h-72 w-auto flex-none flex-col items-center justify-around rounded-md bg-dark/20 p-4 backdrop-blur-sm dark:bg-light/20"
+  {...props}
+>
+  <a href={href} class="h-full w-full hover:border-0">
+    {logo && logo}
+    <h2 class="font-serif text-xl">
       {title}
-      <span>&rarr;</span>
     </h2>
     {description && <small>{description}</small>}
     <p>
       <slot />
     </p>
+    {
+      image && (
+        <Image
+          src={image}
+          alt={title}
+          inferSize
+          loading={"lazy"}
+          aria-label={`Image for the ${title} project`}
+        />
+      )
+    }
   </a>
 </li>

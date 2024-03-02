@@ -1,8 +1,8 @@
 ---
 import Monogram from "./Monogram.astro";
 import DarkModeToggle from "./DarkModeToggle.astro";
-import BottomMenu from "./Nav.astro";
 import Tooltip from "./Tooltip.astro";
+import Nav from "./Nav.astro";
 interface Props {
   className?: string;
 }
@@ -12,7 +12,7 @@ const { className } = Astro.props;
 
 <section class={className}>
   <DarkModeToggle />
-  <BottomMenu transition:persist />
+  <Nav transition:persist />
   <Tooltip
     tooltipArrow={true}
     tooltipText="Made with 🧗 in 🇨🇿"

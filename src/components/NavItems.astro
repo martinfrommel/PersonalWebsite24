@@ -6,31 +6,43 @@ interface Props {
   className?: string;
 }
 
-const links = [
+interface Links {
+  name: string;
+  link: string;
+  icon: string;
+  target: "_self" | "_blank";
+}
+
+const links: Links[] = [
   {
     name: "Home",
     link: "/",
     icon: "pixelarticons:home",
+    target: "_self",
   },
   {
     name: "GitHub",
     link: "https://github.com/martinfrommel",
     icon: "pixelarticons:git-merge",
+    target: "_blank",
   },
   {
     name: "Music",
     link: "https://tidal.com/browse/credits/20269946",
     icon: "pixelarticons:music",
+    target: "_blank",
   },
   {
     name: "Projects",
     link: "/projects",
     icon: "pixelarticons:folder",
+    target: "_self",
   },
   {
     name: "Socials",
     link: "https://linktr.ee/martinfrommel",
     icon: "pixelarticons:human-handsup",
+    target: "_blank",
   },
 ];
 
@@ -43,7 +55,7 @@ const { size, className } = Astro.props;
       <a
         aria-label={link.name}
         href={link.link}
-        target="_self"
+        target={link.target || "_self"}
         class="flex flex-none flex-col flex-wrap items-center justify-center"
       >
         <Icon name={link.icon} width={size} height={size} />

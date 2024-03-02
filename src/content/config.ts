@@ -21,8 +21,8 @@ const technologies = [
   "firebase",
   "aws",
   "docker",
-  'astro',
-  'alpinejs'
+  "astro",
+  "alpinejs",
 ] as const;
 
 export const collections = {
@@ -40,6 +40,7 @@ export const collections = {
         .max(150, "Description must be shorter than 150 chars")
         .optional(),
       image: z.string().optional(),
+      logo: z.string(),
     }),
   }),
 };

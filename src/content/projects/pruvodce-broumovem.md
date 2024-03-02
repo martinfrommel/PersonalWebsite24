@@ -4,7 +4,7 @@ datePublished: 2023-06-01
 language: "en"
 description: "Web app development"
 technologies: ["astro", "alpinejs", "html", "css", "tailwind"]
-image: "../../assets/img"
+logo: "PruvodceBroumovem"
 ---
 
 Pruvodce Broumovem (The Broumov Guide) is a project that brings the history of Broumov to life. Using Astro (v2), AlpineJS, and Netlify, I developed a website that offers a guided tour through this charming town.

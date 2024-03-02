@@ -4,7 +4,7 @@ datePublished: 2022-07-22
 language: "en"
 description: "Website design and development"
 technologies: ["wordpress", "php", "css", "mysql"]
-image: "../../assets/img"
+logo: "UlitaBroumov"
 ---
 
 Working with DDM Ulita Broumov was an adventure in creativity. I redesigned their website using WordPress, creating a digital space that showcases their diverse range of courses. From pottery to climbing, each course has its unique place on the site.

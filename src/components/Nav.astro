@@ -18,9 +18,10 @@ positioned at the bottom of the screen. -->
   <div
     x-cloak
     x-transition
-    class="z-10 hidden h-28 max-h-full w-auto flex-none flex-row items-center justify-evenly gap-4 rounded-lg bg-dark/20 px-8 py-4 backdrop-blur-sm dark:bg-light/20 lg:flex sm:portrait:flex"
+    x-shot="!show"
+    class="z-10 hidden h-20 max-h-20 flex-auto flex-row items-center justify-evenly gap-4 rounded-md bg-dark/20 px-4 py-2 backdrop-blur-sm dark:bg-light/20 lg:flex sm:portrait:flex"
   >
-    <NavItems size={48} />
+    <NavItems size={24} />
   </div>
 
   <!-- Small Screen -->
@@ -28,7 +29,7 @@ positioned at the bottom of the screen. -->
     x-cloak
     x-transition
     x-show="show"
-    class="absolute bottom-14 z-10 flex h-24 w-fit flex-none flex-row items-center justify-evenly space-x-4 rounded-lg bg-dark/20 px-8 py-4 backdrop-blur-sm dark:bg-light/20 xl:bottom-24"
+    class="absolute bottom-14 z-30 flex h-24 w-fit flex-auto flex-row items-center justify-evenly gap-4 rounded-md bg-dark/20 px-8 py-4 backdrop-blur-sm dark:bg-light/20 xl:bottom-24"
   >
     <NavItems size={32} />
   </div>

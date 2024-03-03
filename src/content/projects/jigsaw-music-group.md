@@ -6,6 +6,7 @@ description: "Web app design and development"
 technologies:
   ["typescript", "graphql", "postgres", "aws", "html", "css", "tailwind"]
 logo: "JigsawMusicGroup"
+image: "jigsawMusicGroup"
 ---
 
 With the help of React, Fastify, GraphQL and Prisma, I designed and built a modern website and a data ingestion tool in one for Jigsaw Music Group, a boutique music distribution and artist management company from South-East England.

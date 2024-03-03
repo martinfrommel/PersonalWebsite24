@@ -76,7 +76,7 @@ code {
 }
 
 .featuredLogo {
-  @apply dark:fill-light fill-dark transition-all ease-in-out opacity-90;
+  @apply dark:fill-light fill-dark transition-all ease-in-out opacity-90 max-w-lg w-auto max-h-10 h-fit;
 }
 
 .featuredLogo #light {

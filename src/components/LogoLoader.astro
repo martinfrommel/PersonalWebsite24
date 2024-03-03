@@ -1,9 +1,10 @@
 ---
 export interface Props {
   logo: string;
+  className?: string;
 }
 
-const { logo } = Astro.props;
+const { logo, className } = Astro.props;
 
 const { default: innerHTML } = await import(`../assets/logos/${logo}.svg?raw`);
 ---

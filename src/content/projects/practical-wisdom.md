@@ -5,6 +5,7 @@ language: "en"
 description: "Website design and development"
 technologies: ["wordpress", "php", "css", "mysql"]
 logo: "PracticalWisdom"
+image: "practicalWisdom"
 ---
 
 Practical Wisdom is a coaching non-profit with a big heart and an even bigger mission. I had the privilege of designing and developing their WordPress site, creating an online platform that truly reflects their dedication to changing lives.

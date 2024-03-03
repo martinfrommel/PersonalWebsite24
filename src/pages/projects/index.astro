@@ -24,8 +24,9 @@ const projects = await getCollection("projects");
             title={project.data.title}
             href={`/projects/${project.slug}`}
             description={project.data.description}
+            image={import(`../../assets/projectScreenshots/${project.data.image}.png`) as unknown as string}
           >
-            <LogoLoader logo={project.data.logo} />
+            <LogoLoader logo={project.data.logo} slot="logo" />
           </Card>
         ))
       }

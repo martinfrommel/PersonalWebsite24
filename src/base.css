@@ -57,7 +57,7 @@ h6 {
 }
 
 a {
-  @apply transition-all duration-100 ease-in hover:border-b-2 hover:border-b-dark hover:dark:border-b-light;
+  @apply transition-all duration-300 ease-in hover:border-b-2 hover:border-b-dark hover:dark:border-b-light;
 }
 
 p {
@@ -65,7 +65,7 @@ p {
 }
 
 li:has(> a) {
-  @apply transition-all duration-100 active:scale-95;
+  @apply transition-all duration-300 active:scale-95;
 }
 
 #monogram {

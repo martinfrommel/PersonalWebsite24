@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
+import ContentLayout from "../../layouts/ContentLayout.astro";
 
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
@@ -19,17 +20,19 @@ const { Content } = await project.render();
 ---
 
 <Layout title=`Projects - ${project.data.title}`>
-  <header>
-    <h1>{project.data.title}</h1>
-    <div class="inline-flex">
-      <p>Published: &nbsp;</p>
-      <time datetime={project.data.datePublished.getFullYear().toString()}
-        >{project.data.datePublished.getFullYear()}</time
-      >
-    </div>
-  </header>
-  <main class="my-6 flex-1">
-    <Content />
-  </main>
-  <a href="/projects" class="">Back to projects</a>
+  <ContentLayout>
+    <header>
+      <h1>{project.data.title}</h1>
+      <div class="inline-flex">
+        <p>Published: &nbsp;</p>
+        <time datetime={project.data.datePublished.getFullYear().toString()}
+          >{project.data.datePublished.getFullYear()}</time
+        >
+      </div>
+    </header>
+    <main class="my-6 flex-1">
+      <Content />
+    </main>
+    <a href="/projects" class="btn">Back to projects</a>
+  </ContentLayout>
 </Layout>

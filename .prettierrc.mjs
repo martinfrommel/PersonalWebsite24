@@ -9,7 +9,4 @@ export default {
   tailwindConfig: "./tailwind.config.mjs",
   tailwindFunctions: ["tw"],
   overrides: [{ files: "*.astro", options: { parser: "astro" } }],
-  importOrder: ["^@core/(.*)$", "^@server/(.*)$", "^@ui/(.*)$", "^[./]"],
-  importOrderSeparation: true,
-  importOrderSortSpecifiers: true,
 };

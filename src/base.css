@@ -16,6 +16,12 @@
  * .menuItem - Applies flexbox layout and transition styles for menu items.
  */
 
+@layer components {
+  .btn {
+    @apply px-4 py-2 font-mono text-lg bg-dark/20 backdrop-blur-md dark:bg-light/20 dark:backdrop-blur-md rounded-md transition-all duration-100 ease-in-out active:scale-95  hover:border-b-2 hover:border-b-dark hover:dark:border-b-light;
+  }
+}
+
 [x-cloak] {
   display: none !important;
 }
@@ -27,7 +33,7 @@ html {
 body {
   background: url("./assets/bg/bgDoodles.svg") center/cover fixed;
   background-blend-mode: overlay;
-  @apply bg-light font-sans  text-base text-dark selection:bg-dark/20 dark:bg-dark dark:text-light dark:selection:bg-light/20;
+  @apply bg-light font-sans  text-base text-dark selection:bg-dark/20 dark:bg-dark dark:text-light dark:selection:bg-light/20
 }
 
 h1,

@@ -51,9 +51,9 @@ const { size, className } = Astro.props;
 
 {
   links.map((link) => (
-    <li class="menuItem">
+    <li class="menuItem" aria-label={link.name}>
       <a
-        aria-label={link.name}
+        aria-label={`Link to ${link.name}`}
         href={link.link}
         target={link.target || "_self"}
         class="flex flex-none flex-col flex-wrap items-center justify-center"

@@ -17,14 +17,20 @@ const projects = await getCollection("projects");
     class="flex w-full flex-1 flex-col items-center justify-evenly gap-4"
   >
     <h1>Projects</h1>
-    <ul class="grid w-auto grid-flow-row grid-cols-1 gap-4 md:grid-cols-2">
+    <ul
+      class="grid w-full grid-flow-row grid-cols-1 gap-4 md:grid-cols-2 md:px-12 xl:grid-cols-3"
+    >
       {
         projects.map((project) => (
           <Card
             title={project.data.title}
             href={`/projects/${project.slug}`}
             description={project.data.description}
-            image={import(`../../assets/projectScreenshots/${project.data.image}.png`) as unknown as string}
+            image={
+              import(
+                `../../assets/projectScreenshots/${project.data.image}.png`
+              ) as unknown as string
+            }
           >
             <LogoLoader logo={project.data.logo} slot="logo" />
           </Card>

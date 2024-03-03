@@ -12,7 +12,7 @@ const { href, title, description, image, ...props } = Astro.props;
 ---
 
 <li
-  class="min-h-72 w-auto rounded-md bg-dark/20 p-4 backdrop-blur-sm transition-transform duration-200 hover:-translate-y-0.5 dark:bg-light/20"
+  class="min-h-72 w-auto rounded-md bg-dark/20 p-4 backdrop-blur-sm transition-transform duration-200 dark:bg-light/20"
   {...props}
 >
   <a
@@ -20,10 +20,12 @@ const { href, title, description, image, ...props } = Astro.props;
     class="flex h-full w-full flex-col items-center justify-around hover:border-0"
   >
     <slot name="logo" />
-    <h2 class="my-2 font-serif text-2xl">
-      {title}
-    </h2>
-    {description && <small>{description}</small>}
+    <div class="my-2 text-center">
+      <h2 class="font-serif text-2xl">
+        {title}
+      </h2>
+      {description && <small>{description}</small>}
+    </div>
     <p>
       <slot />
     </p>
@@ -35,7 +37,7 @@ const { href, title, description, image, ...props } = Astro.props;
           alt={title}
           inferSize
           loading={"lazy"}
-          formats={["auto", "webp"]}
+          decoding={"async"}
           aria-label={`Image for the ${title} project`}
         />
       )

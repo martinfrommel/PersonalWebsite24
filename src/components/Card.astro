@@ -6,10 +6,9 @@ interface Props {
   href: string;
   description?: string;
   image?: string;
-  logo: string;
 }
 
-const { href, title, description, image, logo, ...props } = Astro.props;
+const { href, title, description, image, ...props } = Astro.props;
 ---
 
 <li
@@ -17,7 +16,7 @@ const { href, title, description, image, logo, ...props } = Astro.props;
   {...props}
 >
   <a href={href} class="h-full w-full hover:border-0">
-    {logo && logo}
+    <slot name="logo" />
     <h2 class="font-serif text-xl">
       {title}
     </h2>

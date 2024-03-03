@@ -1,13 +1,5 @@
----
-export interface Props {
-  className?: string;
-}
-
-const { className } = Astro.props;
----
-
 <svg
-  class=`featuredLogo ${className}`
+  class="featuredLogo"
   width="100%"
   height="100%"
   viewBox="0 0 1664 400"

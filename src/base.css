@@ -74,3 +74,19 @@ code {
 .hero {
   @apply relative top-10 z-20 flex flex-1 flex-col items-center justify-center gap-4 p-2 text-center;
 }
+
+.featuredLogo {
+  @apply dark:fill-light fill-dark transition-all ease-in-out opacity-90;
+}
+
+.featuredLogo #light {
+  @apply dark:fill-dark fill-light transition-all ease-in-out;
+}
+
+ {
+  @apply border-b-2 border-b-light;
+}
+
+.projectItem {
+  @apply lg:hover:dark:bg-light/20 lg:hover:bg-dark/20 rounded-md px-2 py-4 transition-all duration-100 ease-in-out active:scale-90 landscape:max-w-lg landscape:md:max-w-xl snap-start snap-always lg:max-w-lg flex flex-col justify-between items-center h-fit w-full;
+}

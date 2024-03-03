@@ -20,6 +20,8 @@ Hi there! I'm a developer passionate about creating beautiful and efficient web 
 
 - **Add my pixel-art avatar and its animations**: give a personalized touch and bring some visual interest to the website.
 
+- **Add tags and sorting system for projects**: This will allow visitors to easily filter and navigate through different project categories, making it more convenient to explore my portfolio.
+
 ## Installation
 
 To get the website running locally:

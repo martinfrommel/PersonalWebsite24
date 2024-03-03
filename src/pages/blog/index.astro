@@ -1,0 +1,36 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import type { CollectionEntry } from "astro:content";
+import Card from "../../components/Card.astro";
+import LogoLoader from "../../components/LogoLoader.astro";
+
+type Props = {
+  post: CollectionEntry<"blog">;
+};
+
+const blog = await getCollection("blog");
+---
+
+<Layout title="Blog">
+  <section
+    class="flex w-full flex-1 flex-col items-center justify-evenly gap-4"
+  >
+    <h1>Blog</h1>
+    <ul
+      class="grid w-full grid-flow-row grid-cols-1 gap-4 md:grid-cols-2 md:px-12 xl:grid-cols-3"
+    >
+      {
+        blog.map((post) => (
+          <Card
+            title={post.data.title}
+            href={`/blog/${post.slug}`}
+            description={post.data.description}
+          >
+          Test
+          </Card>
+        ))
+      }
+    </ul>
+  </section>
+</Layout>

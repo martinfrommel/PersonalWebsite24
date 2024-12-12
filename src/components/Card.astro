@@ -12,21 +12,21 @@ const { href, title, description, image, ...props } = Astro.props;
 ---
 
 <li
-  class="h-fit min-h-72 w-auto rounded-md bg-dark/20 backdrop-blur-sm transition-all duration-300 hover:border-b-2 hover:border-b-dark dark:bg-light/20 hover:dark:border-b-light"
+  class="h-fit min-h-72 w-auto flex-1 rounded-md bg-dark/20 backdrop-blur-sm transition-all duration-300 hover:border-b-2 hover:border-b-dark dark:bg-light/20 hover:dark:border-b-light"
   {...props}
 >
   <a
     href={href}
-    class="flex h-full w-full flex-col items-center justify-around p-4 hover:border-0"
+    class="flex h-full w-full flex-1 flex-col items-start justify-around p-4 hover:border-0"
   >
     <slot name="logo" />
-    <div class="my-2 text-center">
+    <div class="my-2 h-full w-full flex-1 text-left">
       <h2 class="font-serif text-2xl">
         {title}
       </h2>
       {description && <small>{description}</small>}
     </div>
-    <p>
+    <p class="h-full w-full flex-1 text-left">
       <slot />
     </p>
     {

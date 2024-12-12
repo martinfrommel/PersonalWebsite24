@@ -2,7 +2,7 @@ import { defineCollection, z } from "astro:content";
 
 const languages = ["en", "cz"] as const;
 
-const technologies = [
+export const technologies = [
   "javascript",
   "typescript",
   "wordpress",
@@ -33,7 +33,7 @@ export const collections = {
         message: "Date can't be in the future",
       }),
       language: z.enum(languages).optional(),
-      technologies: z.array(z.enum(technologies)).optional(),
+      technologies: z.array(z.string()).optional(),
       description: z
         .string()
         .max(150, "Description must be shorter than 150 chars")

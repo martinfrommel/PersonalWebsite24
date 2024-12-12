@@ -21,8 +21,8 @@ const { Content } = await post.render();
 ---
 
 <Layout title=`Blog - ${post.data.title}`>
-  <div class="flex flex-none flex-col">
-    <ContentLayout className="">
+  <div class="flex flex-col">
+    <ContentLayout>
       <header>
         <h1>{post.data.title}</h1>
         <div class="inline-flex">

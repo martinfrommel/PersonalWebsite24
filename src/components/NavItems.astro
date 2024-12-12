@@ -27,6 +27,12 @@ const links: Links[] = [
     target: "_self",
   },
   {
+    icon: "pixelarticons:notes-multiple",
+    name: "Blog",
+    link: "/blog",
+    target: "_self",
+  },
+  {
     name: "GitHub",
     link: "https://github.com/martinfrommel",
     icon: "pixelarticons:git-merge",
@@ -57,7 +63,10 @@ const { size, className } = Astro.props;
         aria-label={`Link to ${link.name}`}
         href={link.link}
         target={link.target || "_self"}
-        class="flex flex-none flex-col flex-wrap items-center justify-center"
+        class:list={[
+          "flex flex-none flex-col flex-wrap items-center justify-center",
+          className,
+        ]}
       >
         <Icon name={link.icon} width={size} height={size} />
 

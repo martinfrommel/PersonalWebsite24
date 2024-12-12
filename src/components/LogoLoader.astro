@@ -9,4 +9,4 @@ const { logo, className } = Astro.props;
 const { default: innerHTML } = await import(`../assets/logos/${logo}.svg?raw`);
 ---
 
-<Fragment set:html={innerHTML} />
+<Fragment set:html={innerHTML} class:list={[className]} />

@@ -14,23 +14,24 @@ const blog = await getCollection("blog");
 
 <Layout title="Blog">
   <section
-    class="flex w-full flex-1 flex-col items-center justify-evenly gap-4"
+    class="flex w-full flex-1 flex-col items-center justify-around gap-4"
   >
-    <h1>Blog</h1>
-    <ul
-      class="grid w-full grid-flow-row grid-cols-1 gap-4 md:grid-cols-2 md:px-12 xl:grid-cols-3"
-    >
-      {
-        blog.map((post) => (
-          <Card
-            title={post.data.title}
-            href={`/blog/${post.slug}`}
-            description={post.data.description}
-          >
-          Test
-          </Card>
-        ))
-      }
-    </ul>
+    <h1 class="mt-auto">Blog</h1>
+    {
+      blog.length > 0 ? (
+        <ul class="mb-auto grid w-full grid-flow-row grid-cols-1 gap-4 md:grid-cols-2 md:px-12 xl:grid-cols-3">
+          {blog?.map((post) => (
+            <Card
+              title={post.data.title}
+              href={`/blog/${post.slug}`}
+              description={post.data.description}
+              image="https://placehold.co/300x200"
+            />
+          ))}
+        </ul>
+      ) : (
+        <p class="mb-auto">No posts found...</p>
+      )
+    }
   </section>
 </Layout>

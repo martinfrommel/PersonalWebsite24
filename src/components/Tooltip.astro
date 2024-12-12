@@ -30,9 +30,16 @@ const { tooltipArrow, tooltipPosition, tooltipText, tooltipClassName } =
     <div
       x-show="tooltipVisible"
       x-transition
-      class=`relative px-2 py-1 ${tooltipClassName} rounded bg-opacity-90`
+      class:list={[
+        "relative rounded bg-opacity-90 px-2 py-1",
+        tooltipClassName,
+      ]}
     >
-      <p x-text="tooltipText" class="block flex-shrink-0 whitespace-nowrap"></p>
+      <p
+        x-text="tooltipText"
+        class="block flex-shrink-0 whitespace-nowrap text-light dark:text-dark"
+      >
+      </p>
       <div
         x-ref="tooltipArrow"
         x-show="tooltipArrow"

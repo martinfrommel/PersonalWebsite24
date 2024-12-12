@@ -1,0 +1,16 @@
+---
+import { colors, names } from "../utils/technologyTagConfig";
+import Tag from "./Tag.astro";
+interface Props {
+  technology: keyof typeof colors;
+  className?: string;
+}
+
+const { technology, className }: Props = Astro.props;
+---
+
+<Tag
+  text={names[technology]}
+  color={colors[technology]}
+  className={className}
+/>

@@ -4,7 +4,16 @@ datePublished: 2023-11-01
 language: "en"
 description: "Web app design and development"
 technologies:
-  ["typescript", "graphql", "postgres", "aws", "html", "css", "tailwind"]
+  [
+    "typescript",
+    "fastify",
+    "graphql",
+    "postgres",
+    "aws",
+    "html",
+    "css",
+    "tailwind",
+  ]
 logo: "JigsawMusicGroup"
 image: "jigsawMusicGroup"
 ---

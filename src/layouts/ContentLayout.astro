@@ -7,7 +7,10 @@ const { className } = Astro.props;
 ---
 
 <div
-  class=`flex w-fit flex-none flex-col items-start justify-start gap-12 rounded-md bg-dark/20 px-4 py-8 backdrop-blur-sm dark:bg-light/20 md:p-12 ${className}`
+  class:list={[
+    "flex w-fit max-w-full flex-none flex-col items-start justify-start gap-6 rounded-md bg-dark/20 px-4 py-8 backdrop-blur-sm dark:bg-light/20 md:p-12",
+    className,
+  ]}
 >
   <slot />
 </div>

@@ -1,54 +1,10 @@
 ---
-import { technologies } from "../content/config";
+import { colors, names } from "../utils/technologyTagConfig";
 import Tag from "./Tag.astro";
 interface Props {
   technology: keyof typeof colors;
   className?: string;
 }
-
-const colors: Record<(typeof technologies)[number], string> = {
-  javascript: "bg-[#f7df1e]/20 text-[#f7df1e]",
-  typescript: "bg-[#3178c6]/20 text-[#3178c6]",
-  wordpress: "bg-[#21759b]/20 text-[#21759b]",
-  react: "bg-[#61dafb]/20 text-[#61dafb]",
-  node: "bg-[#339933]/20 text-[#339933]",
-  php: "bg-[#777bb4]/20 text-[#777bb4]",
-  html: "bg-[#e34f26]/20 text-[#e34f26]",
-  css: "bg-[#1572b6]/20 text-[#1572b6]",
-  express: "bg-[#000000]/20 text-[#000000]",
-  tailwind: "bg-[#38b2ac]/20 text-[#38b2ac]",
-  graphql: "bg-[#e10098]/20 text-[#e10098]",
-  mongodb: "bg-[#47a248]/20 text-[#47a248]",
-  postgres: "bg-[#336791]/20 text-[#336791]",
-  mysql: "bg-[#00758f]/20 text-[#00758f]",
-  firebase: "bg-[#ffca28]/20 text-[#ffca28]",
-  aws: "bg-[#ff9900]/20 text-[#ff9900]",
-  docker: "bg-[#2496ed]/20 text-[#2496ed]",
-  astro: "bg-[#ff5a03]/20 text-[#ff5a03]",
-  alpinejs: "bg-[#8bc0d0]/20 text-[#8bc0d0]",
-} as const;
-
-const names: Record<(typeof technologies)[number], string> = {
-  javascript: "JavaScript",
-  typescript: "TypeScript",
-  wordpress: "WordPress",
-  react: "React",
-  node: "Node.js",
-  php: "PHP",
-  html: "HTML",
-  css: "CSS",
-  express: "Express",
-  tailwind: "Tailwind CSS",
-  graphql: "GraphQL",
-  mongodb: "MongoDB",
-  postgres: "PostgreSQL",
-  mysql: "MySQL",
-  firebase: "Firebase",
-  aws: "AWS",
-  docker: "Docker",
-  astro: "Astro",
-  alpinejs: "Alpine.js",
-} as const;
 
 const { technology, className }: Props = Astro.props;
 ---

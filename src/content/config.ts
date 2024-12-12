@@ -22,6 +22,16 @@ export const technologies = [
   "docker",
   "astro",
   "alpinejs",
+  "fastify",
+  "nextjs",
+  "svelte",
+  "vue",
+  "nuxt",
+  "angular",
+  "nestjs",
+  "deno",
+  "sapper",
+  "apollo",
 ] as const;
 
 export const collections = {

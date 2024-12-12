@@ -36,7 +36,7 @@ const { Content } = await project.render();
               >{project.data.datePublished.getFullYear()}</time
             >
           </div>
-          <div class="mt-3 flex gap-1">
+          <div class="mt-3 flex flex-wrap gap-1">
             {
               project?.data?.technologies?.map((technology) => (
                 <TechnologyTag technology={technology as keyof typeof names} />

@@ -17,7 +17,7 @@ const projects = await getCollection("projects");
   >
     <h1 class="mt-auto">Projects</h1>
     <ul
-      class="mb-auto grid w-full grid-flow-row grid-cols-1 gap-4 md:grid-cols-2 md:px-12 xl:grid-cols-3"
+      class="mb-auto grid w-full max-w-screen-xl grid-flow-row grid-cols-1 gap-4 md:grid-cols-2 md:px-12 xl:grid-cols-3"
     >
       {
         projects.map((project) => (

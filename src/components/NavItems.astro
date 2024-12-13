@@ -35,7 +35,7 @@ const links: Links[] = [
   {
     name: "GitHub",
     link: "https://github.com/martinfrommel",
-    icon: "pixelarticons:git-merge",
+    icon: "pixelarticons:git-pull-request",
     target: "_blank",
   },
   {
@@ -47,8 +47,8 @@ const links: Links[] = [
 
   {
     name: "Socials",
-    link: "https://linktr.ee/martinfrommel",
-    icon: "pixelarticons:human-handsup",
+    link: "https://linkedin.com/in/martin-frommel",
+    icon: "pixelarticons:message-processing",
     target: "_blank",
   },
 ];
@@ -69,7 +69,6 @@ const { size, className } = Astro.props;
         ]}
       >
         <Icon name={link.icon} width={size} height={size} />
-
         <span class="font-mono xl:text-lg">{link.name}</span>
       </a>
     </li>

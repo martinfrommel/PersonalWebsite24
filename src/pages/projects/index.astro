@@ -4,7 +4,6 @@ import Layout from "../../layouts/Layout.astro";
 import type { CollectionEntry } from "astro:content";
 import Card from "../../components/Card.astro";
 
-
 type Props = {
   projects: CollectionEntry<"projects">;
 };
@@ -26,11 +25,12 @@ const projects = await getCollection("projects");
             title={project.data.title}
             href={`/projects/${project.slug}`}
             description={project.data.description}
-            image={
-              import(
+            image={{
+              src: import(
                 `../../assets/projectScreenshots/${project.data.image}.png`
-              ) as unknown as string
-            }
+              ) as unknown as string,
+              alt: `Screenshot of the ${project.data.title} project`,
+            }}
           />
         ))
       }

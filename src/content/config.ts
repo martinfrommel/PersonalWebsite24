@@ -49,7 +49,8 @@ export const collections = {
         .max(150, "Description must be shorter than 150 chars")
         .optional(),
       image: z.string().optional(),
-      logo: z.string(),
+      alt: z.string().optional(),
+      logo: z.string().optional(),
     }),
   }),
   blog: defineCollection({
@@ -65,6 +66,7 @@ export const collections = {
         .max(150, "Description must be shorter than 150 chars")
         .optional(),
       image: z.string().optional(),
+      alt: z.string().optional(),
     }),
   }),
 };

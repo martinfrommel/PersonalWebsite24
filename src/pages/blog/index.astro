@@ -24,7 +24,12 @@ const blog = await getCollection("blog");
               title={post.data.title}
               href={`/blog/${post.slug}`}
               description={post.data.description}
-              image="https://placehold.co/300x200"
+              image={{
+                src: import(
+                  `../../assets/blogPostImages/${post.data.image}.png`
+                ) as unknown as string,
+                alt: `Image for the blog post titled ${post.data.title}`,
+              }}
             />
           ))}
         </ul>

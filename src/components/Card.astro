@@ -5,7 +5,10 @@ interface Props {
   title: string;
   href: string;
   description?: string;
-  image?: string;
+  image?: {
+    src: string;
+    alt: string;
+  };
 }
 
 const { href, title, description, image, ...props } = Astro.props;
@@ -17,28 +20,26 @@ const { href, title, description, image, ...props } = Astro.props;
 >
   <a
     href={href}
-    class="flex h-full w-full flex-1 flex-col items-start justify-around p-4 hover:border-0"
+    class="flex h-full w-full flex-1 flex-col items-center justify-around p-4 hover:border-0"
   >
-    <slot name="logo" />
-    <div class="my-2 h-full w-full flex-1 text-left">
-      <h2 class="font-serif text-2xl">
+    <div class="my-2 h-full w-full flex-1 text-center">
+      <h2 class:list={["font-serif text-2xl"]}>
         {title}
       </h2>
       {description && <small>{description}</small>}
     </div>
-    <p class="h-full w-full flex-1 text-left">
+    <p class="h-full w-full flex-1 text-center">
       <slot />
     </p>
     {
       image && (
         <Image
           class={"h-48 w-full max-w-md rounded-md object-cover object-center"}
-          src={image}
-          alt={title}
+          src={image.src}
+          alt={image.alt}
           inferSize
           loading={"lazy"}
           decoding={"async"}
-          aria-label={`Image for the ${title} project`}
         />
       )
     }
